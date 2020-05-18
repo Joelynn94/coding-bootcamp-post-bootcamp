@@ -184,28 +184,69 @@ var twoDimArray = [
 // another seperator for your convenience
 console.log('     first array      ');
 // iterate through the first array inside twoDimArray and console log all the numbers less than 25
+for (let i = 0; i < twoDimArray[0].length; i++) {
+  if (twoDimArray[0][i] < 25) {
+    console.log(twoDimArray[0][i]);
+  }
+}
 
 // another seperator for your convenience
 console.log('     second array      ');
 // iterate through the second array inside twoDimArray and console log all the numbers less than 25
+for (let i = 0; i < twoDimArray[1].length; i++) {
+  if (twoDimArray[1][i] < 25) {
+    console.log(twoDimArray[1][i]);
+  }
+}
 
 // another seperator for your convenience
 console.log('     third array      ');
 // iterate through the third array inside twoDimArray and console log all the numbers less than 25
+for (let i = 0; i < twoDimArray[2].length; i++) {
+  if (twoDimArray[2][i] < 25) {
+    console.log(twoDimArray[2][i]);
+  }
+}
 
 // another seperator for your convenience
 console.log('     fourth array      ');
 // iterate through the fourth array inside twoDimArray and console log all the numbers less than 25
+for (let i = 0; i < twoDimArray[3].length; i++) {
+  if (twoDimArray[3][i] < 25) {
+    console.log(twoDimArray[3][i]);
+  }
+}
 
 // another seperator for your convenience
 console.log('     fifth array      ');
 // iterate through the fifth array inside twoDimArray and console log all the numbers less than 25
+for (let i = 0; i < twoDimArray[4][i]; i++) {
+  if (twoDimArray[4][i] < 25) {
+    console.log(twoDimArray[4][i]);
+  }
+}
 
 // another seperator for your convenience
 console.log('     odd numbers      ');
 // iterate through twoDimArray and the arrays inside of it and console log all the odd numbers
+for (let outer = 0; outer < twoDimArray.length; outer++) {
+  for (let inner = 0; inner < twoDimArray[outer][inner]; inner++) {
+    if (twoDimArray[outer][inner] % 2 === 1) {
+      console.log(twoDimArray[outer][inner]);
+    }
+  }
+}
 
 // another seperator for your convenience
 console.log('     sum of multiples of 3      ');
 // iterate through twoDimArray and the arrays inside of it and
 // console log the sum of all the numbers that are a multiple of 3
+for (let outer = 0; outer < twoDimArray.length; outer++) {
+  // console.log(twoDimArray[outer]); // this console logs the nested arrays - as arrays
+  for (let inner = 0; inner < twoDimArray[outer][inner]; inner++) {
+    // console.log(twoDimArray[outer][inner]); // this will console log all of the indexes for the nested arrays
+    if (twoDimArray[outer][inner] % 3 === 0) {
+      console.log(twoDimArray[outer][inner]);
+    }
+  }
+}
