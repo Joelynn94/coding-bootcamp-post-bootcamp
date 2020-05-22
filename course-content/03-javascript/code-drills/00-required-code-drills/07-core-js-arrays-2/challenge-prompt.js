@@ -8,7 +8,7 @@ let ourArray = [];
 ourArray.push(1);
 
 // push the string "hello" into ourArray
-ourArray.push('Hello');
+ourArray.push("Hello");
 
 // push the boolean false into ourArray
 ourArray.push(false);
@@ -17,14 +17,14 @@ ourArray.push(false);
 ourArray.push(84);
 
 // push the string "world" into our Array
-ourArray.push('World');
+ourArray.push("World");
 
 // console log ourArray
 console.log(ourArray);
 
 // This seperator is here to make your console logs a little easier to read
 // by creating seperations between the different sections of the activity
-console.log('--------------------------Seperator 1--------------------------');
+console.log("--------------------------Seperator 1--------------------------");
 
 // declare a variable named oneToTen and assign it an array containing the numbers from 1 to 10
 const oneToTen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -37,7 +37,7 @@ console.log(oneToTen[7]);
 
 // This seperator is here to make your console logs a little easier to read
 // by creating seperations between the different sections of the activity
-console.log('--------------------------Seperator 2--------------------------');
+console.log("--------------------------Seperator 2--------------------------");
 
 // We've declared this array for you
 var numArray = [2, 65, 3, 7, 39, 22, 11, 94, 299, 9, 20, 21, 51, 37];
@@ -91,37 +91,37 @@ console.log(sum);
 
 // This seperator is here to make your console logs a little easier to read
 // by creating seperations between the different sections of the activity
-console.log('--------------------------Seperator 3--------------------------');
+console.log("--------------------------Seperator 3--------------------------");
 
 // We've declared this array for you
 let fruits = [
-  'Apple',
-  'Orange',
-  'Banana',
-  'Pomelo',
-  'Apple',
-  'Kiwi',
-  'Peach',
-  'Banana',
-  'Grape',
-  'Tomato',
-  'Kiwi',
-  'Apple',
-  'Watermelon',
-  'Lemon',
-  'Pomelo',
-  'Apple',
-  'Banana',
-  'Peach',
-  'Apricot',
-  'Grape',
+  "Apple",
+  "Orange",
+  "Banana",
+  "Pomelo",
+  "Apple",
+  "Kiwi",
+  "Peach",
+  "Banana",
+  "Grape",
+  "Tomato",
+  "Kiwi",
+  "Apple",
+  "Watermelon",
+  "Lemon",
+  "Pomelo",
+  "Apple",
+  "Banana",
+  "Peach",
+  "Apricot",
+  "Grape",
 ];
 console.log(fruits);
 
 // iterate through fruits and console log the number of times "Apple" appears in the array
 let appleCount = 0;
 for (let i = 0; i < fruits.length; i++) {
-  if (fruits[i] === 'Apple') {
+  if (fruits[i] === "Apple") {
     appleCount++;
     // longer version
     // appleCount = appleCount + 1;
@@ -132,7 +132,7 @@ console.log(appleCount);
 // iterate through fruits and console log the number of times "Peach" appears in the array
 let peachCount = 0;
 for (let i = 0; i < fruits.length; i++) {
-  if (fruits[i] === 'Peach') {
+  if (fruits[i] === "Peach") {
     peachCount++;
     // longer version
     // peachCount = peachCount + 1;
@@ -147,7 +147,7 @@ for (let i = 0; i < fruits.length; i++) {
   // Javascript also treats strings as arrays so you can also use the index for reference
   // var currentFruit = fruits[i];
   // currentFruit[0] === "P";
-  if (fruits[i].charAt(0) === 'P') {
+  if (fruits[i].charAt(0) === "P") {
     stringP++;
   }
 }
@@ -169,7 +169,7 @@ console.log(uniqueFruits);
 
 // This seperator is here to make your console logs a little easier to read
 // by creating seperations between the different sections of the activity
-console.log('--------------------------Seperator 4--------------------------');
+console.log("--------------------------Seperator 4--------------------------");
 
 // CHALLENGE (Optional!)
 // In this challenge we're going to be working with nested arrays.
@@ -182,7 +182,7 @@ var twoDimArray = [
   [2, 12, 44, 2, 12],
 ];
 // another seperator for your convenience
-console.log('     first array      ');
+console.log("     first array      ");
 // iterate through the first array inside twoDimArray and console log all the numbers less than 25
 for (let i = 0; i < twoDimArray[0].length; i++) {
   if (twoDimArray[0][i] < 25) {
@@ -191,7 +191,7 @@ for (let i = 0; i < twoDimArray[0].length; i++) {
 }
 
 // another seperator for your convenience
-console.log('     second array      ');
+console.log("     second array      ");
 // iterate through the second array inside twoDimArray and console log all the numbers less than 25
 for (let i = 0; i < twoDimArray[1].length; i++) {
   if (twoDimArray[1][i] < 25) {
@@ -200,7 +200,7 @@ for (let i = 0; i < twoDimArray[1].length; i++) {
 }
 
 // another seperator for your convenience
-console.log('     third array      ');
+console.log("     third array      ");
 // iterate through the third array inside twoDimArray and console log all the numbers less than 25
 for (let i = 0; i < twoDimArray[2].length; i++) {
   if (twoDimArray[2][i] < 25) {
@@ -209,7 +209,7 @@ for (let i = 0; i < twoDimArray[2].length; i++) {
 }
 
 // another seperator for your convenience
-console.log('     fourth array      ');
+console.log("     fourth array      ");
 // iterate through the fourth array inside twoDimArray and console log all the numbers less than 25
 for (let i = 0; i < twoDimArray[3].length; i++) {
   if (twoDimArray[3][i] < 25) {
@@ -218,7 +218,7 @@ for (let i = 0; i < twoDimArray[3].length; i++) {
 }
 
 // another seperator for your convenience
-console.log('     fifth array      ');
+console.log("     fifth array      ");
 // iterate through the fifth array inside twoDimArray and console log all the numbers less than 25
 for (let i = 0; i < twoDimArray[4][i]; i++) {
   if (twoDimArray[4][i] < 25) {
@@ -227,7 +227,7 @@ for (let i = 0; i < twoDimArray[4][i]; i++) {
 }
 
 // another seperator for your convenience
-console.log('     odd numbers      ');
+console.log("     odd numbers      ");
 // iterate through twoDimArray and the arrays inside of it and console log all the odd numbers
 for (let outer = 0; outer < twoDimArray.length; outer++) {
   for (let inner = 0; inner < twoDimArray[outer][inner]; inner++) {
@@ -238,7 +238,7 @@ for (let outer = 0; outer < twoDimArray.length; outer++) {
 }
 
 // another seperator for your convenience
-console.log('     sum of multiples of 3      ');
+console.log("     sum of multiples of 3      ");
 // iterate through twoDimArray and the arrays inside of it and
 // console log the sum of all the numbers that are a multiple of 3
 for (let outer = 0; outer < twoDimArray.length; outer++) {
