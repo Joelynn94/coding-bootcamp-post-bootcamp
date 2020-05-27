@@ -1,19 +1,29 @@
 // More Nested Array Access
 
-
 // ------------------------------------------------------------------
 console.log("==================== Question 01  ====================");
 // Constructing a Custom Object:
-// So far you have learned about arrays and objects and played with enumerators (loops!). 
-var toyArray = ["Water Balloon","Silly Putty","Paint-by-Numbers Kit",
-             "Mr. Potato Head","Wiffle Ball","PEZ Dispenser",
-             "Mr. Potato Head","Gumby","Hula Hoop","Mr. Potato Head",
-             "Troll Doll","Silly Putty","Slip n Slide"]
+// So far you have learned about arrays and objects and played with enumerators (loops!).
+var toyArray = [
+  "Water Balloon",
+  "Silly Putty",
+  "Paint-by-Numbers Kit",
+  "Mr. Potato Head",
+  "Wiffle Ball",
+  "PEZ Dispenser",
+  "Mr. Potato Head",
+  "Gumby",
+  "Hula Hoop",
+  "Mr. Potato Head",
+  "Troll Doll",
+  "Silly Putty",
+  "Slip n Slide",
+];
 
-// For this challenge, iterate over the provided `toyArray` and create your own custom `toyInventoryObj`. 
-//`toyInventoryObj` will be an object with key-value pairs. 
+// For this challenge, iterate over the provided `toyArray` and create your own custom `toyInventoryObj`.
+//`toyInventoryObj` will be an object with key-value pairs.
 
-//What the `toyInventoryObj` should store is the name of the toy as the key and how many times it occurs in the toyArray as the value. 
+//What the `toyInventoryObj` should store is the name of the toy as the key and how many times it occurs in the toyArray as the value.
 // For example "Water Balloon" occurs once in the toyArray and "Silly Putty" occurs twice. What I would expect the function to construct is:
 
 // toyInventoryObj = {
@@ -21,20 +31,30 @@ var toyArray = ["Water Balloon","Silly Putty","Paint-by-Numbers Kit",
 //   "Silly Putty":2,
 //   ...
 // }
+console.log(toyArray);
+for (i = 0; i < toyArray.length; i++) {
+  console.log(toyArray[i]);
+}
+console.log();
+function returnCustomObject(arr) {
+  var obj = {};
 
-function returnCustomObject(arr){
-	var obj ={};
-  
   // ---------- Your Code Here ----------
 
-
-
-
-
+  for (i = 0; i < arr.length; i++) {
+    // check for the key - this does not create keys
+    if (obj[arr[i]]) {
+      // if key exists - add a one
+      obj[arr[i]] += 1;
+    } else {
+      // otherwise store the value of the key to one
+      obj[arr[i]] = 1;
+    }
+  }
 
   // ---------- End of Code Area ----------
 
-	return obj;
+  return obj;
 }
 
 // calling on your function and storing the return value
@@ -53,64 +73,73 @@ console.log(toyInventoryObj);
 //   'Troll Doll': 1,
 //   'Slip n Slide': 1 }
 
-
-
-
 // ------------------------------------------------------------------
 console.log("==================== Question 02  ====================");
 // Evaluating Values in a Object:
 
-// Iterate over the custom object you created in the previous question (`toyInventoryObj`) and look at each of its keys and values. 
+// Iterate over the custom object you created in the previous question (`toyInventoryObj`) and look at each of its keys and values.
 // Return the toy that occurs the greatest number of times using the `toyInventoryObj`.
 
-function greatestFrequency(toyInventory){
+function greatestFrequency(toyInventory) {
   var maxToy, maxNum;
-  
+
+  // defined maxNum as a number
+  maxNum = 0;
+  // define maxToy as a string
+  maxToy = "";
+
   // ---------- Your Code Here ----------
-
-
-
-
-
+  // using for/in loop to loop through the properties of the object
+  for (toy in toyInventory) {
+    // logs the toy inventory with the toy name and the number of occurances from the toyInventory
+    console.log(`${toy}: ${toyInventory[toy]}`);
+    if (toyInventory[toy] > maxNum) {
+      maxNum = toyInventory[toy];
+      maxToy = toy;
+    }
+  }
 
   // ---------- End of Code Area ----------
 
-	console.log("The toy that occurs the greatest number of times is "+ maxToy + ", which occurs " + maxNum +" times.")
+  console.log(
+    "The toy that occurs the greatest number of times is " +
+      maxToy +
+      ", which occurs " +
+      maxNum +
+      " times."
+  );
 }
 
-// The console log of your application should be the following string: 
+// The console log of your application should be the following string:
 // "The toy that occurs the greatest number of times is 'Mr. Potato Head', which occurs 3 times."
 greatestFrequency(toyInventoryObj);
-
-
-
 
 // ------------------------------------------------------------------
 console.log("==================== Question 03  ====================");
 // Custom obj Creation from an Array of Values
 
 // Object creation from an array of elements:
-var toyArray = ["Iron Man vs. Ultron","Iron Man vs. Loki","Park Animals", "Adventure Camp Rafting","Snax"]
+var toyArray = [
+  "Iron Man vs. Ultron",
+  "Iron Man vs. Loki",
+  "Park Animals",
+  "Adventure Camp Rafting",
+  "Snax",
+];
 // Using the names given in the `toyArray`, construct toy objects and create a new array, `toyObjectArray`, filled with those 5 new `Toy Objects`.
 // The names of the toys should be stored within the `name` key.
 
-function toyArrToObj(arrayOfToys){
-  
+function toyArrToObj(arrayOfToys) {
   var toyArrayOfObjs = [];
 
   // ---------- Your Code Here ----------
 
-
-
-
-
-
   // ---------- End of Code Area ----------
 
-	return toyArrayOfObjs
+  return toyArrayOfObjs;
 }
 
-var newToyArray = toyArrToObj(toyArray)
+var newToyArray = toyArrToObj(toyArray);
 console.log(newToyArray);
 // The newToyArray should look like this:
 
@@ -120,15 +149,12 @@ console.log(newToyArray);
 //   { name: 'Adventure Camp Rafting' },
 //   { name: 'Snax' } ]
 
-
-
-
 // ------------------------------------------------------------------
 console.log("==================== Question 04  ====================");
 // Constructing a Custom Object With Calculated Values:
 
 // Please iterate over the provided toyInventoryArrayOfObjects and create a custom object that holds the following values:
-// Requirements: 
+// Requirements:
 // A key for each toyLine with the following key value pairs
 // - toyLine, which contains the name of the toyLine
 // - An array holding the names of each toy in that line
@@ -136,9 +162,9 @@ console.log("==================== Question 04  ====================");
 
 // The desired Object that you should expect is a Object that looks like this:
 
-// { 'Potato Head Series': 
+// { 'Potato Head Series':
 //    { toyLine: 'Potato Head Series',
-//      toyLineToys: 
+//      toyLineToys:
 //       [ 'Mr. Potato Head',
 //         'Potato Bug',
 //         'Johnny Rotten Apple',
@@ -147,98 +173,107 @@ console.log("==================== Question 04  ====================");
 //         'Mr. Giblets',
 //         'Aliens' ],
 //      totalToysInToyLine: 1930 },
-//   'Adventure Time Series': 
+//   'Adventure Time Series':
 //    { toyLine: 'Adventure Time Series',
 //      toyLineToys: [ 'Finn the Human', 'Jake the Dog', 'Princess Bubblegum' ],
 //      totalToysInToyLine: 116 } }
 
 // DATA SET
 
-// Here is the provided array that contains each of the toy objects that contain the information that you need:  
+// Here is the provided array that contains each of the toy objects that contain the information that you need:
 
 toyInventoryArrayOfObjects = [
- {  "title": "Mr. Potato Head", //name of toy
-    "toyLine" : "Potato Head Series", //name of toyline
-    "fullPrice": "05.00", //full price for this toy
-    "stock": 3 //number of toys in stock for this toy
- },
- {  "title": "Potato Bug",
-    "toyLine": "Potato Head Series",
-    "fullPrice": "10.00",
-    "stock": 1
- },
- {  "title": "Johnny Rotten Apple",
-    "toyLine": "Potato Head Series",
-    "fullPrice": "15.00",
-    "stock": 59
- },
- {  "title": "Dr. Fruitcake",
-    "toyLine": "Potato Head Series",
-    "fullPrice": "20.00",
-    "stock": 265
- },
- {  "title": "Ham Monster",
-    "toyLine": "Potato Head Series",
-    "fullPrice": "25.00",
-    "stock": 265
- },
- {  "title": "Mr. Giblets",
-    "toyLine": "Potato Head Series",
-    "fullPrice": "30.00",
-    "stock": 358
- },
- {  "title": "Aliens",
-    "toyLine": "Potato Head Series",
-    "fullPrice": "35.00",
-    "inStock": false,
-    "stock": 979
- },
- {  "title": "Finn the Human",
-    "toyLine": "Adventure Time Series",
-    "fullPrice": "40.00",
-    "stock": 32
- },
- {  "title": "Jake the Dog",
-    "toyLine": "Adventure Time Series",
-    "fullPrice": "45.00",
-    "stock": 38
- },
- {  "title": "Princess Bubblegum",
-    "toyLine": "Adventure Time Series",
-    "fullPrice": "50.00",
-    "stock": 46
- }];
+  {
+    title: "Mr. Potato Head", //name of toy
+    toyLine: "Potato Head Series", //name of toyline
+    fullPrice: "05.00", //full price for this toy
+    stock: 3, //number of toys in stock for this toy
+  },
+  {
+    title: "Potato Bug",
+    toyLine: "Potato Head Series",
+    fullPrice: "10.00",
+    stock: 1,
+  },
+  {
+    title: "Johnny Rotten Apple",
+    toyLine: "Potato Head Series",
+    fullPrice: "15.00",
+    stock: 59,
+  },
+  {
+    title: "Dr. Fruitcake",
+    toyLine: "Potato Head Series",
+    fullPrice: "20.00",
+    stock: 265,
+  },
+  {
+    title: "Ham Monster",
+    toyLine: "Potato Head Series",
+    fullPrice: "25.00",
+    stock: 265,
+  },
+  {
+    title: "Mr. Giblets",
+    toyLine: "Potato Head Series",
+    fullPrice: "30.00",
+    stock: 358,
+  },
+  {
+    title: "Aliens",
+    toyLine: "Potato Head Series",
+    fullPrice: "35.00",
+    inStock: false,
+    stock: 979,
+  },
+  {
+    title: "Finn the Human",
+    toyLine: "Adventure Time Series",
+    fullPrice: "40.00",
+    stock: 32,
+  },
+  {
+    title: "Jake the Dog",
+    toyLine: "Adventure Time Series",
+    fullPrice: "45.00",
+    stock: 38,
+  },
+  {
+    title: "Princess Bubblegum",
+    toyLine: "Adventure Time Series",
+    fullPrice: "50.00",
+    stock: 46,
+  },
+];
 
 // Iterate over each object in the provided `toyInventoryArrayOfObjects` and create a custom object: `customToyLineObject`.
 // We can to consolidate the array of toy objects into a toyline object as defined by the instructions above
-function createCustomObject(objectArr){
-
-	customToyLineObj = {};
+function createCustomObject(objectArr) {
+  customToyLineObj = {};
 
   // ---------- Your Code Here ----------
 
-
-
-
-
-
   // ---------- End of Code Area ----------
 
-	return customToyLineObj
+  return customToyLineObj;
 }
 
 // The following should console.log the `customToyLineObject` to terminal
-var customObject = createCustomObject(toyInventoryArrayOfObjects)// takes the `toyInventoryArrayOfObjects` as an argument
+var customObject = createCustomObject(toyInventoryArrayOfObjects); // takes the `toyInventoryArrayOfObjects` as an argument
 console.log(customObject);
 
 // This is a tester function that will perform a quick spot check to test if your code is working
 function testObject(obj) {
-  if (customObject['Potato Head Series'] && customObject['Adventure Time Series']) {
-    if ((customObject['Potato Head Series'].totalToysInToyLine === 1930) &&
-      (customObject['Potato Head Series'].toyLineToys.length === 7) &&
-      (customObject['Adventure Time Series'].totalToysInToyLine === 116) &&
-      (customObject['Adventure Time Series'].toyLineToys.length === 3))  
-    {
+  if (
+    customObject["Potato Head Series"] &&
+    customObject["Adventure Time Series"]
+  ) {
+    if (
+      customObject["Potato Head Series"].totalToysInToyLine === 1930 &&
+      customObject["Potato Head Series"].toyLineToys.length === 7 &&
+      customObject["Adventure Time Series"].totalToysInToyLine === 116 &&
+      customObject["Adventure Time Series"].toyLineToys.length === 3
+    ) {
       return true;
     }
   }
@@ -249,31 +284,20 @@ function testObject(obj) {
 // This should console log `true` if the object you made matches up enough with ours
 console.log(testObject(customObject));
 
-
-
-
 // ------------------------------------------------------------------
 console.log("==================== Question 05  ====================");
 // Write a function that when passed an array of numbers, returns true if there are
 // duplicate numbers within that array and false if there are no duplicates within
 // the argument
 
-function areDups(arr){
-
+function areDups(arr) {
   // ---------- Your Code Here ----------
-
-
-
-
-
-
   // ---------- End of Code Area ----------
-
 }
 
 // These arrays are going to be used to test your function
-var duplicatesOne = [1,2,4,5,77,8,19,4];
-var duplicatesTwo = [32,4,60,56,78,3,9];
+var duplicatesOne = [1, 2, 4, 5, 77, 8, 19, 4];
+var duplicatesTwo = [32, 4, 60, 56, 78, 3, 9];
 
 // This should console log true:
 console.log(areDups(duplicatesOne));
